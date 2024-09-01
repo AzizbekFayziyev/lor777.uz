@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Unbounded:wght@200..900&display=swap');
+
+/* Global styles */
+
+@layer components {
+    .btn-outline {
+        @apply text-dark-blue rounded-full border border-stroke px-4 py-2 flex items-center gap-2 hover:text-white hover:bg-cerulean-blue-500 transition-colors hover:border-transparent
+    }
+}
+
+html,
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+    @apply text-dark-blue font-golos;
+}
