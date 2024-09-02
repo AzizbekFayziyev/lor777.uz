@@ -14,20 +14,25 @@
             </div>
         </div>
 
-        <div ref="scrollContainer" class="reviews flex sm:gap-6 gap-4 overflow-x-auto">
-            <div v-for="(review, idx) in reviewsData" :key="idx" v-motion="{
-                initial: {
-                    opacity: 0,
-                    scale: 0.8,
-                },
-                visible: {
-                    opacity: 1,
-                    scale: 1,
-                    transition: {
-                        delay: 150 * idx,
+        <div v-motion="{
+            initial: {
+                opacity: 0,
+                x: -300,
+            },
+            visible: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                        type: 'spring',
+                        stiffness: 250,
+                        damping: 25,
+                        mass: 0.5,
+                        delay: 200,
                     },
-                }
-            }" class="bg-block-bg p-6 rounded-3xl md:min-w-[580px] sm:min-w-[400px] min-w-[320px] min-h-[250px]">
+            }
+        }" ref="scrollContainer" class="reviews flex sm:gap-6 gap-4 overflow-x-auto">
+            <div v-for="(review, idx) in reviewsData" :key="idx"
+                class="bg-block-bg p-6 rounded-3xl md:min-w-[580px] sm:min-w-[400px] min-w-[320px] min-h-[250px]">
                 <div class="flex items-center justify-between">
                     <h5 class="text-xl font-semibold">{{ review.name }}</h5>
                     <span class="text-sm text-blue-gray">{{ review.date }}</span>

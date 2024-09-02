@@ -20,8 +20,8 @@
             }" class="sm:w-[450px] w-full">
                 <img class="rounded-3xl w-full" :src="doctor.img" :alt="doctor.name">
                 <h4 class="text-xl mt-4">{{ doctor.name }}</h4>
-                <p class="text-blue-gray mt-2">{{ doctor.category }} }}</p>
-            </div>>
+                <p class="text-blue-gray mt-2">{{ doctor.category }}</p>
+            </div>
         </div>
     </section>
 </template>

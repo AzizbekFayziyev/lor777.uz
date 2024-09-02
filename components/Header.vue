@@ -43,7 +43,9 @@
                     visible: { x: 0, opacity: 1, transition: { delay: 200 } }
                 }" class="bg-block-bg w-full rounded-3xl py-8 px-6">
                     <h4>Довольных Пациентов</h4>
-                    <p class="text-5xl font-unbounded font-bold text-cerulean-blue-500 mt-4">500 +</p>
+                    <p class="text-5xl font-unbounded font-bold text-cerulean-blue-500 mt-4 flex">
+                        <FeaturesCountUp :end-val="500" /> +
+                    </p>
                     <p class="mt-10">Самые лучшие - врачи и оборудование все для вашего здоровье</p>
                 </div>
 

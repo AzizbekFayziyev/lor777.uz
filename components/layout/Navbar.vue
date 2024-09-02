@@ -27,6 +27,8 @@
             </template>
         </UPopover>
     </nav>
+
+    <FeaturesScrollToTop />
 </template>
 
 <script setup>
