@@ -1,5 +1,5 @@
 <template>
-    <form v-motion="{
+    <form @submit.prevent="onSubmit" v-motion="{
         initial: {
             opacity: 0
         },
@@ -21,9 +21,9 @@
                 <UInput v-model.trim="formData.name" class="border-b flex-1 border-stroke text-white"
                     :ui="{ placeholder: 'placeholder-stroke', base: 'focus:border-white' }" variant="none"
                     placeholder="Имя *" required />
-                <UInput v-model.number="formData.tel" class="border-b flex-1 border-stroke text-white"
+                <UInput v-model="formData.number" class="border-b flex-1 border-stroke text-white"
                     :ui="{ placeholder: 'placeholder-stroke', base: 'focus:border-white' }" variant="none"
-                    placeholder="Номер *" type="number" required />
+                    placeholder="Номер *" required />
             </div>
 
             <UInput v-model.trim="formData.message" class="border-b my-8 border-stroke text-white"
@@ -39,7 +39,24 @@
 <script setup>
 const formData = ref({
     name: "",
-    tel: "",
+    number: "",
     message: "",
-})
+});
+
+const onSubmit = async () => {
+    const { data } = await useMyFetch('/application/create', {
+        method: "POST",
+        body: {
+            ...formData.value
+        }
+    });
+
+    formData.value = {
+        name: "",
+        number: "",
+        message: "",
+    }
+
+    alert("Ваше заявление отправлено!");    
+}
 </script>

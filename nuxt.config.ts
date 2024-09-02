@@ -56,5 +56,10 @@ export default defineNuxtConfig({
   colorMode: {
     preference: "light",
   },
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.BASE_URL || "https://admin.lor777.uz/api"
+    },
+  },
   modules: ["@nuxt/ui", "@vueuse/motion/nuxt"],
 });

@@ -9,7 +9,7 @@
                 <h4 class="text-xl font-semibold my-2">{{ title }}</h4>
 
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <span v-for="tag in tags" :key="tag" class="bg-[#F5F5F7] p-2 rounded-3xl text-sm">{{ tag }}</span>
+                    <span v-for="tag in tags" :key="tag" class="bg-[#F5F5F7] p-2 rounded-3xl text-sm">{{ tag.title }}</span>
                 </div>
             </div>
 

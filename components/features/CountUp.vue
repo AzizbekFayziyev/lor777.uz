@@ -1,7 +1,7 @@
 <template>
-        <div ref="counterElement" v-motion :initial="initialStyle" :enter="enterStyle">
+        <span ref="counterElement" v-motion :initial="initialStyle" :enter="enterStyle">
             {{ displayValue }}
-        </div>
+        </span>
 </template>
 
 <script setup>

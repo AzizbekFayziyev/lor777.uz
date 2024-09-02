@@ -23,26 +23,27 @@
                 opacity: 1,
                 x: 0,
                 transition: {
-                        type: 'spring',
-                        stiffness: 250,
-                        damping: 25,
-                        mass: 0.5,
-                        delay: 200,
-                    },
+                    type: 'spring',
+                    stiffness: 250,
+                    damping: 25,
+                    mass: 0.5,
+                    delay: 200,
+                },
             }
         }" ref="scrollContainer" class="reviews flex sm:gap-6 gap-4 overflow-x-auto">
-            <div v-for="(review, idx) in reviewsData" :key="idx"
+            <div v-for="review in reviewsData" :key="review.id"
                 class="bg-block-bg p-6 rounded-3xl md:min-w-[580px] sm:min-w-[400px] min-w-[320px] min-h-[250px]">
                 <div class="flex items-center justify-between">
-                    <h5 class="text-xl font-semibold">{{ review.name }}</h5>
-                    <span class="text-sm text-blue-gray">{{ review.date }}</span>
+                    <h5 class="text-xl font-semibold">{{ review?.title }}</h5>
+                    <span class="text-sm text-blue-gray">{{ review?.date }}</span>
                 </div>
 
                 <div class="flex text-blue-gray gap-2 mt-4 mb-6">
-                    <span v-for="tag in review.tags" :key="tag" class="p-1 px-2 rounded-3xl bg-white">{{ tag }}</span>
+                    <span v-for="tag in review?.illnesess" :key="tag" class="p-1 px-2 rounded-3xl bg-white">{{ tag.title
+                        }}</span>
                 </div>
 
-                <p class="text-sm text-blue-gray">{{ review.desc }}</p>
+                <div v-html="review?.text" class="text-sm text-blue-gray"></div>
             </div>
         </div>
     </section>
@@ -51,31 +52,8 @@
 <script setup>
 const scrollContainer = ref(null);
 
-const reviewsData = [
-    {
-        name: "Солиха Абдурашидова",
-        date: "23.02.2023",
-        tags: ['Отит', 'Болезни слюнных желез'],
-        desc: `ЛОР врач-это уже наша любовь, мы ходим к нему всей семьёй, дочка даже уже не плачет спокойно проходит
-                все процедуры.Медсестры тоже замечательные, всегда внимательны и аккуратны.Сама клиника всегда
-                чистая, светлая и приятный персонал(ни разу не видела грубости с их стороны, даже во времена
-                карантина, когда все люди были нервными и уставшими).`
-    },
-    {
-        name: "Акмал Абдулаев",
-        date: "23.02.2023",
-        tags: ['Отит', 'Болезни слюнных желез'],
-        desc: `ЛОР врач-это уже наша любовь, мы ходим к нему всей
-                семьёй, дочка даже уже не плачет спокойно проходит
-                все процедуры. Медсестры тоже замечательные, всегда внимательны и аккуратны. Сама клиника всегда чистая,`,
-    },
-    {
-        name: "Шамсиддин Тухтамурадов",
-        date: "23.02.2023",
-        tags: ['Отит', 'Болезни слюнных желез'],
-        desc: `ЛОР врач-это уже наша любовь, мы ходим к нему всей семьёй, дочка даже уже не плачет спокойно проходит`
-    }
-];
+const { data } = await useMyFetch('/reviews');
+const { results: reviewsData } = data.value;
 
 const scrollTo = (direction) => {
     if (scrollContainer.value) {

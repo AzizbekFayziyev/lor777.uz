@@ -8,7 +8,7 @@
         </div>
 
         <div class="flex gap-4 flex-wrap md:justify-between justify-center items-center mt-10">
-            <img v-for="(i, idx) in 5" v-motion="{
+            <img v-for="(i, idx) in certificatesData" v-motion="{
                 initial: {
                     scale: 0
                 },
@@ -22,8 +22,13 @@
                         delay: 150 * (idx + 1),
                     },
                 }
-            }" width="250" class="p-2 border border-cerulean-blue-600 rounded-3xl" :src="`/img/certificate${i}.png`"
+            }" width="250" class="p-2 border border-cerulean-blue-600 rounded-3xl block mx-auto" :src="i.image"
                 alt="certificate">
         </div>
     </section>
 </template>
+
+<script setup>
+const { data } = await useMyFetch('/certificates');
+const { results: certificatesData } = data.value;
+</script>

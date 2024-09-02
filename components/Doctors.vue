@@ -3,7 +3,7 @@
         <h3 class="text-3xl font-semibold mb-8">Наши доктора</h3>
 
         <div class="flex sm:flex-row flex-col sm:gap-4 gap-8 justify-between">
-            <div v-for="(doctor, idx) in doctors" v-motion="{
+            <div v-for="(doctor, idx) in doctorsData" :key="doctor?.id" v-motion="{
                 initial: {
                     scale: 0
                 },
@@ -18,15 +18,18 @@
                     },
                 }
             }" class="sm:w-[450px] w-full">
-                <img class="rounded-3xl w-full" :src="doctor.img" :alt="doctor.name">
-                <h4 class="text-xl mt-4">{{ doctor.name }}</h4>
-                <p class="text-blue-gray mt-2">{{ doctor.category }}</p>
+                <img class="rounded-3xl w-full sm:max-h-[450px] max-h-[350px] object-cover" :src="doctor?.image" :alt="doctor?.title">
+                <h4 class="text-xl mt-4">{{ doctor?.title }}</h4>
+                <p class="text-blue-gray mt-2">{{ doctor?.subtitle }}</p>
             </div>
         </div>
     </section>
 </template>
 
 <script setup>
+const { data } = await useMyFetch('/workers');
+const { results: doctorsData } = data.value;
+
 const doctors = [
     {
         name: "Якубов Ражаббой Фарходович",
