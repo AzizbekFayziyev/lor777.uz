@@ -1,5 +1,5 @@
 <template>
-    <Header />
+    <Header :title="staticInfo?.title" :subtitle="staticInfo?.subtitle" />
     <Services />
     <About />
     <Media />
@@ -7,12 +7,11 @@
     <Doctors />
     <Certificates />
     <Reviews />
-    <ContactInfo />
+    <ContactInfo :staticInfo="staticInfo" />
 </template>
 
 <script setup>
-import Certificates from '~/components/Certificates.vue';
-
+const { data: staticInfo } = await useMyFetch('/static_infos');
 
 </script>
 

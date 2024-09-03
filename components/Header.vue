@@ -6,11 +6,10 @@
                 visible: { x: 0, opacity: 1 }
             }" class="bg-block-bg rounded-3xl py-8 px-6 relative z-10">
                 <h1 class="text-4xl font-unbounded font-bold leading-tight">
-                    Круглосуточный Премиальный лор в Ташкенте
+                    {{ title }}
                 </h1>
                 <h3 class="text-blue-gray mt-2">
-                    Клиника предоставляет круглосуточный полный спектр услуг для точной
-                    диагностики и эффективного лечения ЛОР-заболеваний.
+                    {{ subtitle }}
                 </h3>
 
                 <div class="flex gap-4 flex-wrap items-center justify-between mt-10">
@@ -79,6 +78,10 @@
         </div>
     </header>
 </template>
+
+<script setup>
+const { title, subtitle } = defineProps(['title', 'subtitle']);
+</script>
 
 <style scoped>
 .headerBg {

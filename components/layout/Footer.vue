@@ -10,12 +10,12 @@
             <div>
                 <div>
                     <h5 class="text-xl font-medium mb-4">Адрес клиники</h5>
-                    <p>Г. Ташкент, Улица Богишамол 1</p>
+                    <p>{{staticInfo?.adres}}</p>
                 </div>
 
                 <div class="mt-6">
                     <h5 class="text-xl font-medium mb-4">Электронная почта</h5>
-                    <a href="mailto:info@lor777.uz">info@lor777.uz</a>
+                    <a :href="`mailto:${staticInfo?.email}`">{{staticInfo?.email}}</a>
                 </div>
             </div>
 
@@ -46,5 +46,5 @@
 </template>
 
 <script setup>
-
+const { data: staticInfo } = await useMyFetch('/static_infos');
 </script>
