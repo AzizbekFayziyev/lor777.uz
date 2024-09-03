@@ -32,7 +32,7 @@
             }
         }" ref="scrollContainer" class="reviews flex sm:gap-6 gap-4 overflow-x-auto">
             <div v-for="review in reviewsData" :key="review.id"
-                class="bg-block-bg p-6 rounded-3xl md:min-w-[580px] sm:min-w-[400px] min-w-[320px] min-h-[250px]">
+                class="bg-block-bg p-6 rounded-3xl md:min-w-[580px] sm:min-w-[400px] min-w-[320px] max-w-[580px] min-h-[250px]">
                 <div class="flex items-center justify-between">
                     <h5 class="text-xl font-semibold">{{ review?.title }}</h5>
                     <span class="text-sm text-blue-gray">{{ review?.date }}</span>
@@ -45,6 +45,7 @@
 
                 <div v-html="review?.text" class="text-sm text-blue-gray"></div>
             </div>
+            
         </div>
     </section>
 </template>

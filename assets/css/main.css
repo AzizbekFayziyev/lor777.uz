@@ -8,7 +8,7 @@
 
 @layer components {
     .btn-outline {
-        @apply text-dark-blue rounded-full border border-stroke px-4 py-2 flex items-center gap-2 hover:text-white hover:bg-cerulean-blue-500 transition-colors hover:border-transparent
+        @apply text-dark-blue rounded-full border border-stroke px-4 py-2 flex items-center gap-2 hover:text-white hover:bg-cerulean-blue-500 transition-colors hover:border-transparent font-semibold;
     }
 }
 

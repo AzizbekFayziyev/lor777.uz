@@ -18,25 +18,25 @@
 
             <div class="flex sm:justify-between justify-center sm:flex-row flex-col gap-4">
                 <div class="max-w-[300px] w-full">
-                    <h5 class="text-xl font-medium mb-4">Режим работы</h5>
+                    <h5 class="text-lg font-semibold mb-4">Режим работы</h5>
                     <p>{{ staticInfo?.work_time }}</p>
                 </div>
 
                 <div class="max-w-[250px] w-full">
-                    <h5 class="text-xl font-medium mb-4">Телефоны для записи</h5>
+                    <h5 class="text-lg font-semibold mb-4">Телефоны для записи</h5>
                     <a v-for="tel in staticInfo?.nbm.split(',')" class="block mb-2 max-w-max" :href="`tel:${tel.replace(/\s+/g, '')}`">{{ tel }}</a>
                   
                 </div>
             </div>
 
-            <div class="flex sm:justify-between justify-center sm:flex-row flex-col gap-4 mt-20">
+            <div class="flex sm:justify-between justify-center sm:flex-row flex-col gap-4 mt-10">
                 <div class="max-w-[250px] w-full">
-                    <h5 class="text-xl font-medium mb-4">Адрес клиники</h5>
+                    <h5 class="text-lg font-semibold mb-4">Адрес клиники</h5>
                     <p>{{ staticInfo?.adres }}</p>
                 </div>
 
                 <div class="max-w-[250px] w-full">
-                    <h5 class="text-xl font-medium mb-4">Электронная почта</h5>
+                    <h5 class="text-lg font-semibold mb-4">Электронная почта</h5>
                     <a :href="`mailto:${staticInfo?.email}`">{{ staticInfo?.email }}</a>
                 </div>
             </div>

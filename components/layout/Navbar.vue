@@ -6,11 +6,11 @@
             <a target="_blank"
                 href="https://www.google.com/maps?ll=41.339222,69.290487&z=16&t=m&hl=en&gl=US&mapclient=embed&cid=9819244691213668220"
                 class="btn-outline">
-                <UIcon name="i-heroicons-map-pin" class="sm:text-lg" /> Улица Богишамол 1
+                <UIcon name="i-heroicons-map-pin" class="text-lg" /> Улица Богишамол 1
             </a>
 
             <a href="tel:+998881080707" class="btn-outline">
-                <UIcon name="i-heroicons-phone" class="sm:text-lg" /> +998 88 108 07 07
+                <UIcon name="i-heroicons-phone" class="text-lg" /> +998 88 108 07 07
             </a>
         </div>
 
