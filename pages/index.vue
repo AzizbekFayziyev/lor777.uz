@@ -1,5 +1,5 @@
 <template>
-    <Header :title="staticInfo?.title" :subtitle="staticInfo?.subtitle" />
+    <Header :title="staticInfo?.title" :subtitle="staticInfo?.subtitle" :video="staticInfo?.video_url" />
     <Services />
     <About />
     <Media />

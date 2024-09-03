@@ -13,6 +13,7 @@
     "@nuxt/ui": "^2.18.4",
     "@vueuse/motion": "^2.2.3",
     "nuxt": "^3.13.0",
+    "swiper": "^11.1.12",
     "vue": "latest",
     "vue-countup-v2": "^4.0.0"
   }

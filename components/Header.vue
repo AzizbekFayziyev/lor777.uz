@@ -60,7 +60,7 @@
         </div>
 
 
-        <div v-motion="{
+        <div v-if="video === null" v-motion="{
             initial: {
                 x: 100,
                 opacity: 0
@@ -76,11 +76,28 @@
             class="headerBg lg:max-w-[720px] max-h-[700px] h-[400px] lg:h-auto w-full bg-block-bg rounded-3xl py-8 px-6 flex items-end">
             <h2 class="text-2xl text-white relative max-w-[480px]">Современное оборудование и методики лечения</h2>
         </div>
+
+        <iframe v-else v-motion="{
+            initial: {
+                x: 100,
+                opacity: 0
+            },
+            visible: {
+                x: 0,
+                opacity: 1,
+                transition: {
+                    delay: 600
+                }
+            }
+        }" :src="video" class="lg:max-w-[720px] max-h-[700px] h-[400px] lg:h-auto w-full rounded-3xl" frameborder="0"></iframe>
     </header>
 </template>
 
 <script setup>
-const { title, subtitle } = defineProps(['title', 'subtitle']);
+const { title, subtitle, video } = defineProps(['title', 'subtitle', 'video']);
+
+console.log(video);
+
 </script>
 
 <style scoped>
