@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   app: {
     head: {
-      title: "Lor777 - Премиальный ЛОР-центр 24/7 в Ташкенте | Диагностика и Лечение",
+      title:
+        "Lor777 - Премиальный ЛОР-центр 24/7 в Ташкенте | Диагностика и Лечение",
       link: [{ rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
       meta: [
         {
@@ -26,7 +27,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:url",
-          content: "https://lor777.uz", 
+          content: "https://lor777.uz",
         },
         {
           name: "twitter:card",
@@ -43,12 +44,12 @@ export default defineNuxtConfig({
         },
         {
           name: "twitter:image",
-          content: "/cover.png", 
+          content: "/cover.png",
         },
       ],
     },
-    
   },
+  css: ["@/assets/css/font.css"],
   devtools: { enabled: true },
   tailwindcss: {
     cssPath: "~/assets/css/main.css",
@@ -58,7 +59,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBase: process.env.BASE_URL || "https://admin.lor777.uz/api"
+      apiBase: process.env.BASE_URL || "https://admin.lor777.uz/api",
     },
   },
   modules: ["@nuxt/ui", "@vueuse/motion/nuxt"],

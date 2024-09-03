@@ -5,7 +5,7 @@
                 initial: { x: -100, opacity: 0 },
                 visible: { x: 0, opacity: 1 }
             }" class="bg-block-bg rounded-3xl py-8 px-6 relative z-10">
-                <h1 class="text-4xl font-unbounded font-bold leading-tight">
+                <h1 class="text-3xl font-unbounded font-bold leading-tight">
                     {{ title }}
                 </h1>
                 <h3 class="text-blue-gray mt-2">

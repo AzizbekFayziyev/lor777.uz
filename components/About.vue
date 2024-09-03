@@ -10,11 +10,11 @@
             initial: { x: 100, opacity: 0 },
             visible: { x: 0, opacity: 1, transition: { delay: 400 } }
         }" class="py-6 px-4">
-            <h3 class="font-semibold lg:text-4xl text-3xl font-unbounded">Более 10 лет заботы
+            <h3 class="font-semibold lg:text-3xl text-2xl font-unbounded">Более 10 лет заботы
                 <br> о вашем здаровье
             </h3>
 
-            <h5 class="mt-10 text-blue-gray">О “777 ЛОР”</h5>
+            <h5 class="sm:mt-10 mt-6 text-blue-gray">О “777 ЛОР”</h5>
 
             <p class="mt-4">
                 Медицинский центр “777 ЛОР” – это учреждение, предлагающее широкий спектр медицинских услуг, включая

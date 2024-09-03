@@ -10,9 +10,9 @@
             },
         }
     }" id="contact"
-        class="mt-20 flex md:flex-row flex-col gap-8 justify-between items-center rounded-3xl p-10 bg-cerulean-blue-600">
+        class="mt-20 flex md:flex-row flex-col gap-8 justify-between items-center rounded-3xl sm:px-12 sm:py-14 p-8 bg-cerulean-blue-600">
         <h3
-            class="text-white font-unbounded lg:text-5xl sm:text-4xl text-3xl font-semibold max-w-[520px] leading-tight">
+            class="text-white font-unbounded lg:text-4xl sm:text-3xl text-2xl font-semibold max-w-[520px] leading-tight">
             Решите ваши проблемы
             вместе с нашими докторами</h3>
 
