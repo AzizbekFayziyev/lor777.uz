@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Global styles */
-
 @layer components {
     .btn-outline {
         @apply text-dark-blue rounded-full border border-stroke px-4 py-2 flex items-center gap-2 hover:text-white hover:bg-cerulean-blue-500 transition-colors hover:border-transparent font-semibold;
@@ -17,4 +15,12 @@ body {
     scroll-behavior: smooth;
     scroll-padding-top: 50px;
     @apply text-dark-blue font-golos;
+}
+
+.swiper-pagination-bullet {
+    @apply !bg-cerulean-blue-500;
+}
+
+.swiper-pagination {
+    @apply bottom-[200px];
 }

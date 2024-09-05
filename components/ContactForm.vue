@@ -20,8 +20,9 @@
             <div class="flex sm:flex-row flex-col sm:gap-4 gap-8">
                 <UInput v-model.trim="formData.name" class="border-b flex-1 border-stroke text-white"
                     :ui="{ placeholder: 'placeholder-stroke', base: 'focus:border-white' }" variant="none"
-                    placeholder="Имя *" required />
-                <UInput v-model="formData.number" class="border-b flex-1 border-stroke text-white"
+                    maxLength="30" placeholder="Имя *" required />
+                <UInput v-model="formData.number" maxLength="13"
+                    class="border-b flex-1 border-stroke text-white"
                     :ui="{ placeholder: 'placeholder-stroke', base: 'focus:border-white' }" variant="none"
                     placeholder="Номер *" required />
             </div>
@@ -37,6 +38,9 @@
 </template>
 
 <script setup>
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
+
 const formData = ref({
     name: "",
     number: "",
@@ -44,7 +48,7 @@ const formData = ref({
 });
 
 const onSubmit = async () => {
-    const { data } = await useMyFetch('/application/create', {
+    await useMyFetch('/application/create', {
         method: "POST",
         body: {
             ...formData.value
@@ -57,6 +61,10 @@ const onSubmit = async () => {
         message: "",
     }
 
-    alert("Ваше заявление отправлено!");    
+    toast("Ваше заявление успешно отправлено!", {
+        autoClose: 3000,
+        theme: "colored",
+        type: "success",
+    });
 }
 </script>

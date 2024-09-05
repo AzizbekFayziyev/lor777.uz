@@ -2,9 +2,9 @@
     <Header :title="staticInfo?.title" :subtitle="staticInfo?.subtitle" :video="staticInfo?.video_url" />
     <Services />
     <About />
-    <Media />
-    <ContactForm />
     <Doctors />
+    <ContactForm />
+    <Media />
     <Certificates />
     <Reviews />
     <ContactInfo :staticInfo="staticInfo" />
