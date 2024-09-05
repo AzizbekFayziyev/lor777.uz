@@ -1,7 +1,7 @@
 <template>
     <section id="services" class="mt-20">
 
-        <h3 class="text-3xl text-center font-semibold mb-8">Наши услуги</h3>
+        <h3 class="text-3xl text-center font-semibold mb-8">{{ translations?.['main.service.text'] }}</h3>
 
         <div class="grid md:grid-cols-2 grid-cols-1 gap-6">
             <ServiceCard v-for="(service, idx) in servicesData" :key="service.id" v-motion="{
@@ -27,4 +27,5 @@
 <script setup>
 const { data } = await useMyFetch('/services');
 const { results: servicesData } = data.value;
+const translations = useState('translations');
 </script>

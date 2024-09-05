@@ -1,6 +1,6 @@
 <template>
     <section id="doctors" class="mt-20">
-        <h3 class="text-3xl font-semibold mb-8">Наши доктора</h3>
+        <h3 class="text-3xl font-semibold mb-8">{{translations?.['main.doctor.text']}}</h3>
 
         <Swiper :slidesPerView="1" :space-between="10" :breakpoints="{
             '640': {
@@ -66,6 +66,7 @@
 <script setup>
 const { data } = await useMyFetch('/workers');
 const { results: doctorsData } = data.value;
+const translations = useState('translations');
 
 // Import Swiper
 import { Swiper, SwiperSlide } from 'swiper/vue';

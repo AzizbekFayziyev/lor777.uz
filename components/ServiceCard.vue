@@ -25,7 +25,7 @@
     <div class="mt-auto mx-auto sm:mx-0">
       <a href="#contact">
         <UButton class="text-lg" size="lg" variant="link"
-          >Свяжется с нами
+          >{{translations?.['main.call.number.button']}}
           <UIcon name="i-heroicons-phone-16-solid" />
         </UButton>
       </a>
@@ -37,4 +37,5 @@
 
 <script setup>
 const { category, title, tags, img } = defineProps(['category', 'title', 'tags', 'img'])
+const translations = useState('translations');
 </script>

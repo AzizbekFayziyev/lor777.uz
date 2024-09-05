@@ -10,24 +10,26 @@
             initial: { x: 100, opacity: 0 },
             visible: { x: 0, opacity: 1, transition: { delay: 400 } }
         }" class="py-6 px-4">
-            <h3 class="font-semibold lg:text-3xl text-2xl font-unbounded">Более 10 лет заботы
-                <br> о вашем здаровье
+            <h3 class="font-semibold lg:text-3xl text-2xl font-unbounded max-w-[400px]">
+                {{ translations?.['main.patient.des2'] }}
             </h3>
 
-            <h5 class="sm:mt-10 mt-6 text-blue-gray">О “777 ЛОР”</h5>
+            <h5 class="sm:mt-10 mt-6 text-blue-gray">{{ translations?.['main.lor.about.title2'] }}</h5>
 
             <p class="mt-4">
-                Медицинский центр “777 ЛОР” – это учреждение, предлагающее широкий спектр медицинских услуг, включая
-                амбулаторную диагностику.
+                {{ translations?.['main.lor.desc'] }}
                 <br> <br>
-                В состав центра входят врачи и кандидаты медицинских наук с многолетним опытом работы, которые в
-                короткие сроки смогут правильно поставить диагноз и предложить оптимальный курс лечения для лечения
-                любых заболеваний.
+                {{ translations?.['main.lor.desc2'] }}
             </p>
 
             <a href="#contact">
-                <UButton class="mt-8" icon="i-heroicons-phone-16-solid" size="xl">Свяжется с нами</UButton>
+                <UButton class="mt-8" icon="i-heroicons-phone-16-solid" size="xl">
+                    {{ translations?.['main.call.number.button'] }}</UButton>
             </a>
         </div>
     </section>
 </template>
+
+<script setup>
+const translations = useState('translations');
+</script>

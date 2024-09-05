@@ -1,10 +1,8 @@
 <template>
     <section class="mt-20 rounded-3xl bg-block-bg p-8">
         <div class="flex gap-4 flex-wrap justify-between items-center">
-            <h3 class="text-3xl font-semibold mb-8">Сертификаты и лицензии</h3>
-            <p class="text-sm text-blue-gray max-w-[580px]">Мы знаем, что такое долг перед обществом, консеквент,
-                принимающий решения, и мы делаем все возможное, чтобы избежать последствий, связанных с трудом и великой
-                скорбью.</p>
+            <h3 class="text-3xl font-semibold mb-8">{{translations?.['main.certificate.text']}}</h3>
+            <p class="text-sm text-blue-gray max-w-[580px]">{{translations?.['main.certificate.desc']}}</p>
         </div>
 
         <div class="flex gap-4 flex-wrap md:justify-between justify-center items-center mt-10">
@@ -31,4 +29,5 @@
 <script setup>
 const { data } = await useMyFetch('/certificates');
 const { results: certificatesData } = data.value;
+const translations = useState('translations');
 </script>

@@ -1,6 +1,6 @@
 <template>
     <section class="mt-20">
-        <h3 class="text-3xl font-semibold mb-8">Наши фото и медиа</h3>
+        <h3 class="text-3xl font-semibold mb-8">{{translations?.['main.media.text']}}</h3>
 
         <Swiper style="height: 330px" :slidesPerView="1" :space-between="10" :pagination="{
             clickable: true,
@@ -60,6 +60,7 @@
 <script setup>
 const { data } = await useMyFetch('/media');
 const { results: media } = data.value;
+const translations = useState('translations');
 
 // Import Swiper
 import { Swiper, SwiperSlide } from 'swiper/vue';

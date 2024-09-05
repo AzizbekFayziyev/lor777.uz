@@ -11,8 +11,11 @@
 </template>
 
 <script setup>
-const { data: staticInfo } = await useMyFetch('/static_infos');
+const translationData = useState('translations', () => { });
 
+const { data: staticInfo } = await useMyFetch('/static_infos');
+const { data: translatons } = await useMyFetch('/translations');
+translationData.value = translatons;
 </script>
 
 <style scoped></style>

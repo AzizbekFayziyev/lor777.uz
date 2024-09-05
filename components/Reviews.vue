@@ -1,7 +1,7 @@
 <template>
     <section id="reviews" class="mt-20">
         <div class="flex justify-between items-center  mb-8">
-            <h3 class="text-3xl font-semibold">Отзывы</h3>
+            <h3 class="text-3xl font-semibold">{{translations?.['main.comment.text']}}</h3>
             <div class="flex gap-2">
                 <button @click="scrollTo('left')"
                     class="w-12 h-12 grid place-content-center border border-stroke rounded-full">
@@ -51,6 +51,7 @@
 </template>
 
 <script setup>
+const translations = useState('translations');
 const scrollContainer = ref(null);
 
 const { data } = await useMyFetch('/reviews');
