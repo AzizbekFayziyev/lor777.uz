@@ -22,7 +22,7 @@
                 {{ translations?.['main.lor.desc2'] }}
             </p>
 
-            <a href="#contact">
+            <a :href="`tel:${translations?.['address.telefon3'].replace(/\s+/g, '')}`">
                 <UButton class="mt-8" icon="i-heroicons-phone-16-solid" size="xl">
                     {{ translations?.['main.call.number.button'] }}</UButton>
             </a>
