@@ -5,7 +5,7 @@
     <Doctors />
     <ContactForm />
     <Media />
-    <Certificates />
+    <!-- <Certificates /> -->
     <Reviews />
     <ContactInfo :staticInfo="staticInfo" />
 </template>
