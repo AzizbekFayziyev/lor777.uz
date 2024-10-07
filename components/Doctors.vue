@@ -31,7 +31,7 @@
                         },
                     }
                 }" class="w-full">
-                    <img class="rounded-3xl w-full h-[350px] sm:h-[450px] object-cover" :src="doctor?.image" :alt="doctor?.title">
+                    <img class="rounded-3xl w-full h-[400px] sm:h-[500px] object-cover" :src="doctor?.image" :alt="doctor?.title">
                     <h4 class="text-xl mt-4">{{ doctor?.title }}</h4>
                     <p class="text-blue-gray mt-2">{{ doctor?.subtitle }}</p>
                 </div>
